@@ -5,6 +5,7 @@
     border: 1px solid gray;
     margin:10px;
     padding: 20px;
+    text-align: center;
     -webkit-transition:width 2s, height 2s, background-color 2s, -webkit-transform 2s;
     transition:width 2s, height 2s, background-color 2s, transform 2s;
 }
