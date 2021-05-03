@@ -1,11 +1,5 @@
 function roomSize(){
-    let room_Arr = ['Single Room', 'Double Room', 'Twin Room', 'Suite Room', 'Family Room'];
-    for(let i=0;i<room_Arr.length;i++){
-        let newRoom = document.createElement('div');
-        newRoom.innerHTML = room_Arr[i]
-        newRoom.setAttribute('class', 'roomOption inlineBlock');
-        document.querySelector('div#roomOption').appendChild(newRoom);
-    }
+    let room_Arr = ['Single', 'Double', 'Suite', 'Deluxe'];
 }
 
 function deleteChildren(parent){
@@ -14,26 +8,29 @@ function deleteChildren(parent){
     }
 }
 
-for (let i=0;i<checkBoxes.length;i++){
-    checkBoxes[i].addEventListener('click', function(){
-        if (this === checkBoxes[0]){
-            if (this.checked){
-                roomSize();
-            }else{
-                deleteChildren(document.querySelector('div#roomOption'));
-            }
-        }else if(this === checkBoxes[1]){
-            console.log(1)
-        }else{
-            if (this === checkBoxes[2]) {
-                let personCount = document.querySelector('#personOption');
-                
-                if (this.checked) {
-                    personCount.style.display = 'block';
-                } else {
-                    personCount.style.display = 'none';
-                }
-            }
+let roomOption = document.getElementById('roomOption');
+let optionList = document.getElementById('optionList');
+
+roomOption.addEventListener('click', () => {
+    let optionType = [
+        { type: 'single', fee: 100000 },
+        { type: 'double', fee: 200000 },
+        { type: 'suite', fee: 300000 },
+        { type: 'deluxe', fee: 400000 },
+    ];
+
+    let click = true;
+
+    if (click === true) {
+        for (let i = 0; i < optionType.length; i++) {
+            let newRoom = document.createElement('div');
+            newRoom.innerHTML = optionType[i].type;
+            optionList.appendChild(newRoom);
         }
-    })
-}
+        click = false;
+    } else {
+        roomOption.removeChild(roomOption.firstChild);
+
+        click = true;
+    }
+})
