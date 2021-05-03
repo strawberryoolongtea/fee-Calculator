@@ -1,5 +1,5 @@
 function roomSize(){
-    let room_Arr = ['Single Room', 'Double Room', 'Twin Room', 'Suite Room'];
+    let room_Arr = ['Single Room', 'Double Room', 'Twin Room', 'Suite Room', 'Family Room'];
     for(let i=0;i<room_Arr.length;i++){
         let newRoom = document.createElement('div');
         newRoom.innerHTML = room_Arr[i]
@@ -25,7 +25,15 @@ for (let i=0;i<checkBoxes.length;i++){
         }else if(this === checkBoxes[1]){
             console.log(1)
         }else{
-            console.log(2)
+            if (this === checkBoxes[2]) {
+                let personCount = document.querySelector('#personOption');
+                
+                if (this.checked) {
+                    personCount.style.display = 'block';
+                } else {
+                    personCount.style.display = 'none';
+                }
+            }
         }
     })
 }
