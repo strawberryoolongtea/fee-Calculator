@@ -1,18 +1,36 @@
-.inlineBlock{
-    display: inline-block;
-}
-.roomOption{
-    border: 1px solid gray;
-    margin:10px;
-    padding: 20px;
-    text-align: center;
-    -webkit-transition:width 2s, height 2s, background-color 2s, -webkit-transform 2s;
-    transition:width 2s, height 2s, background-color 2s, transform 2s;
-}
-.roomOption:hover {
-    background-color: #FFCCCC;
-    width:120px;
-    height:50px;
+:root {
+    --main-color: #e0c150;
+    --sub-color: #5b1a1a;
+
+    --main-font: arial, sans-serif;
 }
 
-#personOption { display: none; }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+.box {
+    width: 360px;
+    height: 60px;
+    border: 1px solid #E0C150;
+    border-radius: 5px;
+}
+
+#optionList {
+    display: flex;
+    justify-content: space-between;
+}
+#optionList > div {
+    width: 80px;
+    height: 60px;
+    border: 1px solid #E0C150;
+    border-radius: 5px;
+}

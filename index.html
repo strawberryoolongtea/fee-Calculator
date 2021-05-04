@@ -4,41 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>숙박 계산기</title>
+
+    <title>Paradise Hotel | 온라인 예약 시스템</title>
 </head>
 <body>
-    <header>
-        <div>숙박 요금 계산기</div>
+  <div id="container">
+    <header id="header">
+        <h1 class="title">reservation</h1>
     </header>
-    <section>
-        <div id="roomSize">
-            <input type='checkbox'>
-            크기
-            <div id='roomOption'>
-
-            </div>
-        </div>
-        <div id="date">
-            <input type="checkbox">
-            날짜
-        </div>
-        <div id="">
-            <input type="checkbox">
-            인원 수
-            <div id="personOption">
-                <div class="adult">
-                    <label for="adultCount">성인</label>
-                    <input type="number" id="adultCount" min="1" max="4">
-                </div>
-                <div class="children">
-                    <label for="childrenCount">아동</label>
-                    <input type="number" id="childrenCount" min="0" max="2">
-                </div>
-            </div>
-        </div>
+    <section id="checkIn" class="box">
+      <div class="label">체크인</div>
+      <div class="date">2021.05.01</div>
     </section>
-    <script type="text/javascript" src="./script/declaration.js"></script>
-    <script type="text/javascript" src="./script/script.js"></script>
+    <section id="checkOut" class="box">
+        <div class="label">체크아웃</div>
+        <div class="date">2021.05.04</div>
+    </section>
+    <section id="roomOption" class="box">
+        <div class="label">객실 선택</div>
+        <div class="roomSelected">Single Room</div>
+    </section>
+    <section id="optionList">
+        
+    </section>
+    <section id="personOption">
+        <div id="adult"></div>
+        <div id="children"></div>
+    </section>
+    <input type="submit" value="요금 계산하기">
+  </div>
+  <script type="text/javascript" src="./script/declaration.js"></script>
+  <script type="text/javascript" src="./script/script.js"></script>
 </body>
 </html>
