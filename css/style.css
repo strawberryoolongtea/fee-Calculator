@@ -27,6 +27,7 @@ body {
 #checkIn:hover, #checkOut:hover, #roomOption:hover {
     background-color: rgba(224,193,80,0.5)
 }
+
 .box {
     width: 360px;
     height: 60px;
