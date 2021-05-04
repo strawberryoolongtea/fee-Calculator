@@ -18,14 +18,30 @@ body {
     font-weight: bolder;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 20px;
+}
+
+.inlineBlock{
+    display: inline-block;
+}
+
+.roomSelected{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50px;
+    transition: background-color .8s;
+
+}
+.roomSelected:hover{
+    background-color: rgb(216, 184, 0);
+    color: white;
 }
 #checkIn, #checkOut, #roomOption, #personOption, #optionList {
     margin-bottom: 10px;
-    transition: background-color .5s
+    transition: background-color .5s;
 }
 #checkIn:hover, #checkOut:hover, #roomOption:hover {
-    background-color: rgba(224,193,80,0.5)
+    background-color: rgba(224,193,80,0.5);
 }
 
 .box {
