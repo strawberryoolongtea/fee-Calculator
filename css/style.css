@@ -35,3 +35,10 @@ body {
     border: 1px solid #E0C150;
     border-radius: 5px;
 }
+
+.countBox {
+    width: 36px;
+    height: 60px;
+    border: 1px solid #E0C150;
+    border-radius: 5px;
+}
