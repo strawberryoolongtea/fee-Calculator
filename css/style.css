@@ -2,7 +2,7 @@
     --main-color: #e0c150;
     --sub-color: #5b1a1a;
 
-    --main-font: arial, sans-serif;
+    --main-font: futura-pt, sans-serif;
 }
 
 body {
@@ -10,18 +10,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--main-font);
 }
 
 .title {
     font-size: 2rem;
     font-weight: bolder;
+    text-align: center;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
-#checkIn, #checkOut, #roomOption, #personOption {margin-bottom: 15px;}
+#checkIn, #checkOut, #roomOption, #personOption, #optionList {
+    margin-bottom: 10px;
+    transition: background-color .5s
+}
+#checkIn:hover, #checkOut:hover, #roomOption:hover {
+    background-color: rgba(224,193,80,0.5)
+}
 .box {
     width: 360px;
     height: 60px;
-    border: 1px solid #E0C150;
+    border: 1px solid var(--main-color);
     border-radius: 5px;
 }
 
@@ -32,7 +41,7 @@ body {
 #optionList > div {
     width: 80px;
     height: 60px;
-    border: 1px solid #E0C150;
+    border: 1px solid var(--main-color);
     border-radius: 5px;
 }
 
@@ -44,7 +53,7 @@ body {
     display: inline-block;
     width: 170px;
     height: 80px;
-    border: 1px solid #E0C150;
+    border: 1px solid var(--main-color);
     border-radius: 5px;
 }
 
