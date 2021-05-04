@@ -2,7 +2,7 @@
     --main-color: #e0c150;
     --sub-color: #5b1a1a;
 
-    --main-font: arial, sans-serif;
+    --main-font: futura-pt, sans-serif;
 }
 
 body {
@@ -10,11 +10,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--main-font);
 }
 
 .title {
     font-size: 2rem;
     font-weight: bolder;
+    text-align: center;
     text-transform: uppercase;
 }
 
@@ -32,14 +34,20 @@ body {
 }
 .roomSelected:hover{
     background-color: rgb(216, 184, 0);
-    color: white
-    
+    color: white;
+}
+#checkIn, #checkOut, #roomOption, #personOption, #optionList {
+    margin-bottom: 10px;
+    transition: background-color .5s;
+}
+#checkIn:hover, #checkOut:hover, #roomOption:hover {
+    background-color: rgba(224,193,80,0.5);
 }
 
 .box {
     width: 360px;
     height: 60px;
-    border: 1px solid #E0C150;
+    border: 1px solid var(--main-color);
     border-radius: 5px;
 }
 
@@ -50,6 +58,27 @@ body {
 #optionList > div {
     width: 80px;
     height: 60px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}
+
+#personOption {
+    display: flex;
+    justify-content: space-between;
+}
+.countBox {
+    display: inline-block;
+    width: 170px;
+    height: 80px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}
+
+#calculate {
+    width: 360px;
+    height: 60px;
     border: 1px solid #E0C150;
     border-radius: 5px;
+    background-color: var(--main-color);
+    color: var(--sub-color);
 }
