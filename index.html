@@ -16,28 +16,50 @@
     <header id="header">
         <h1 class="title">reservation</h1>
     </header>
-    <section id="checkIn" class="box">
-      <div class="label">체크인</div>
-      <div class="date">2021.05.01</div>
-    </section>
-    <section id="checkOut" class="box">
-        <div class="label">체크아웃</div>
-        <div class="date">2021.05.04</div>
-    </section>
-    <section id="roomOption" class="box">
-        <div class="label">객실 선택</div>
-        <div class="roomSelected">Single Room</div>
-    </section>
-    <section id="optionList">
-        
-    </section>
-    <section id="personOption">
-        <div id="adult"></div>
-        <div id="children"></div>
-    </section>
-    <input type="submit" value="요금 계산하기">
+    <div id="section-container">
+      <section id="checkIn" class="box">
+        <div class="label">체크인</div>
+        <div class="date">2021.05.01</div>
+      </section>
+      <section id="checkOut" class="box">
+          <div class="label">체크아웃</div>
+          <div class="date">2021.05.04</div>
+      </section>
+      <section id="roomOption" class="box">
+          <div class="label">객실 선택</div>
+          <div class="roomSelected">Single Room</div>
+      </section>
+      <section id="optionList">
+          
+      </section>
+      <section id="personOption">
+          <div id="adult" class="countBox">
+            <div class="label">성인</div>
+            <div class="adultCount">
+              <span>-</span><span>0</span><span>+</span>
+            </div>
+          </div>
+          <div id="children" class="countBox">
+            <div class="label">아동</div>
+            <div class="adultCount">
+              <span>-</span><span>0</span><span>+</span>
+            </div>
+          </div>
+      </section>
+    </div>
+    <input type="submit" value="요금 계산하기" id="calculate">
   </div>
   <script type="text/javascript" src="./script/declaration.js"></script>
   <script type="text/javascript" src="./script/script.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'gpr1zpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </body>
 </html>
