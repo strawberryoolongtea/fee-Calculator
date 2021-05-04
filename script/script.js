@@ -1,36 +1,12 @@
-function roomSize(){
-    let room_Arr = ['Single', 'Double', 'Suite', 'Deluxe'];
-}
+let roomSizeArr = [...document.querySelectorAll('.roomSelected')]
+let roomFeeArr = ['100,000', '200,000', '300,000', '400,000'];
 
-function deleteChildren(parent){
-    while(parent.hasChildNodes()){
-        parent.removeChild(parent.firstChild);
-    }
-}
-
-let roomOption = document.getElementById('roomOption');
-let optionList = document.getElementById('optionList');
-
-roomOption.addEventListener('click', () => {
-    let optionType = [
-        { type: 'single', fee: 100000 },
-        { type: 'double', fee: 200000 },
-        { type: 'suite', fee: 300000 },
-        { type: 'deluxe', fee: 400000 },
-    ];
-
-    let click = true;
-
-    if (click === true) {
-        for (let i = 0; i < optionType.length; i++) {
-            let newRoom = document.createElement('div');
-            newRoom.innerHTML = optionType[i].type;
-            optionList.appendChild(newRoom);
+for (let i=0;i<roomSizeArr.length;i++){
+    roomSizeArr[i].addEventListener('click', function (){
+        for (let i=0;i<roomSizeArr.length;i++){
+            if (this === roomSizeArr[i]){
+                document.querySelector('#roomFeeBox').innerText = roomFeeArr[i];
+            }
         }
-        click = false;
-    } else {
-        roomOption.removeChild(roomOption.firstChild);
-
-        click = true;
-    }
-})
+    })
+}
