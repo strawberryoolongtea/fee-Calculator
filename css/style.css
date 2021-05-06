@@ -14,6 +14,8 @@ body {
 }
 
 .title {
+    margin-bottom: 10px;
+    color: var(--sub-color);
     font-size: 2rem;
     font-weight: bolder;
     text-align: center;
@@ -23,7 +25,10 @@ body {
 .inlineBlock{
     display: inline-block;
 }
-
+#roomFeeBox{
+    color: var(--sub-color);
+    font-weight: bold;
+}
 .roomSelected{
     margin-top: 10px;
     padding: 13px;
@@ -31,11 +36,12 @@ body {
     text-align: center;
     border: 1px solid var(--main-color);
     border-radius: 7px;
+    color: var(--sub-color);
+    font-weight: bold;
     transition: background-color .8s;
 }
 .roomSelected:hover{
-    background-color: rgb(216, 184, 0);
-    color: white;
+    background-color: var(--main-color);
 }
 #checkIn, #checkOut, #roomOption, #personOption, #optionList {
     margin-bottom: 10px;
@@ -46,12 +52,17 @@ body {
 }
 
 .box {
-    width: 360px;
-    height: 60px;
+    padding: 23px;
+    width: 315px;
+    height: 18px;
     border: 1px solid var(--main-color);
     border-radius: 5px;
 }
-
+.label{
+    width: 95px;
+    color: var(--main-color);
+    font-weight: bold;
+}
 #optionList {
     display: flex;
     justify-content: space-between;
@@ -74,17 +85,21 @@ body {
     text-align: center;
     border: 1px solid var(--main-color);
     border-radius: 5px;
+    color: var(--sub-color);
 }
 .countButton{
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0);
+    width: 25px;
     border: none;
+    border-radius: 50px;
+    color: var(--sub-color);
 }
 .countInput{
-    text-align: center;
-    font-size: 17px;
     width: 30px;
     border: none;
+    text-align: center;
+    font-size: 17px;
+    color: var(--sub-color);
 }
 #calculate {
     width: 360px;
@@ -92,5 +107,6 @@ body {
     border: 1px solid #E0C150;
     border-radius: 5px;
     background-color: var(--main-color);
+    font-weight: bold;
     color: var(--sub-color);
 }
