@@ -68,13 +68,24 @@ body {
     justify-content: space-between;
 }
 .countBox {
-    display: inline-block;
-    width: 170px;
-    height: 80px;
+    padding: 30px;
+    width: 32%;
+    height: 100%;
+    text-align: center;
     border: 1px solid var(--main-color);
     border-radius: 5px;
 }
-
+.countButton{
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+.countInput{
+    text-align: center;
+    font-size: 17px;
+    width: 30px;
+    border: none;
+}
 #calculate {
     width: 360px;
     height: 60px;
