@@ -21,7 +21,18 @@
     <section id="finishing-notice">
       예약이 완료되었습니다!
     </section>
-    <input type="submit" value="새로운 여행 계획하기" id="newplan">
+    <input type="submit" value="새로운 여행 계획하기" id="newplan" onclick="newplan()">
   </div>
+  <script type="text/javascript" src="../script/booked.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'gpr1zpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </body>
 </html>
