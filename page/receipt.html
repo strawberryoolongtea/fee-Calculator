@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="../css/receipt.css">
+
+    <!-- material icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <title>Paradise Hotel | 온라인 예약 시스템</title>
+</head>
+<body>
+  <div class="container">
+    <header id="header">
+      <h1 class="title">receipt</h1>
+    </header>
+    <section id="section-container">
+      <section class="receipt-details">
+        <div class="label">체크인</div>
+        <div class="content">2021.05.01</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">체크아웃</div>
+        <div id="nightsCount" class="content">
+          <span>2021.05.04</span>
+          <i class="material-icons-outlined hotel">hotel</i>
+          <span>3박</span>
+        </div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">객실</div>
+        <div class="content">Single Room</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">인원</div>
+        <div id="personCount" class="content">
+          <div class="adult">
+            <span>성인</span><span>2</span>
+          </div>
+          <div class="children">
+            <span>아동</span><span>1</span>
+          </div>
+        </div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">요금</div>
+        <div id="calculatedPrice" class="content">300,000</div>
+      </section>
+    </section>
+    <input type="submit" value="예약하기" id="reserve">
+  </div>
+  <script type="text/javascript" src="../script/declaration.js"></script>
+  <script type="text/javascript" src="../script/script.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'gpr1zpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+</body>
+</html>
