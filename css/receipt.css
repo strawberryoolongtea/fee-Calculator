@@ -1,0 +1,114 @@
+:root {
+  --main-color: #e0c150;
+  --sub-color: #5b1a1a;
+
+  --main-font: futura-pt, sans-serif;
+  --sub-font: source-han-sans-cjk-ko, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--main-font);
+}
+
+#section-container {pointer-events: none;}
+
+.title {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 38px;
+}
+
+.receipt-details {
+  display: flex;
+  width: 420px;
+  height: 60px;
+}
+
+.receipt-details:nth-child(1) {border-top: 1px solid var(--main-color);}
+.receipt-details:nth-child(2) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(3) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(4) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(5) {
+  border-top: 1px dashed var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  margin-bottom: 42px;
+  text-align: right;
+}
+
+.label {
+  width: 100px;
+  padding-left: 30px;
+
+  font-family: var(--sub-font);
+  font-weight: 700;
+
+  color: var(--main-color);
+  text-align: left;
+  line-height: 60px;
+  /* background: #333; */
+}
+
+.content {
+  width: 290px;
+  padding-right: 30px;
+
+  font-weight: 700;
+  color: var(--sub-color);
+  line-height: 60px;
+  /* background: #666; */
+}
+
+#nightsCount {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nightsCount > span:last-child {
+  font-family: var(--sub-font);
+}
+
+#nightsCount > span:last-child::before {
+  content: 'nights'
+}
+
+#personCount {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adult {margin-right: 60px;}
+
+.adult > span:first-child, .children > span:first-child {
+  margin-right: 30px;
+  font-family: var(--sub-font);
+  color: var(--main-color);
+}
+
+#calculatedPrice::after {
+  content: 'KRW';
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+#reserve {
+  position: relative;
+  width: 420px;
+  height: 60px;
+  border: 1px solid #E0C150;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
+  transition: background-color .5s, padding-left .5s;
+}
+#reserve:hover {
+  padding-left: 30px;
+  background-color: rgba(224,193,80,0.5)
+}
