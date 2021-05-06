@@ -18,11 +18,11 @@
     </header>
     <div id="section-container">
       <section id="checkIn" class="box">
-        <div class="label">체크인</div>
+        <div class="label inlineBlock">체크인</div>
         <input id="checkInCal" type="date">
       </section>
       <section id="checkOut" class="box">
-          <div class="label">체크아웃</div>
+          <div class="label inlineBlock">체크아웃</div>
           <input id="checkOutCal" type="date">
       </section>
       <section id="roomFee" class="box">
@@ -30,22 +30,26 @@
         <div id='roomFeeBox' class="inlineBlock"></div>
       </section>
       <section id="roomSize">
-        <div class="roomSelected inlineBlock">Single Room</div>
-        <div class="roomSelected inlineBlock">Double Room</div>
-        <div class="roomSelected inlineBlock">Suite Room</div>
-        <div class="roomSelected inlineBlock">Deluxe Room</div>
+        <div class="roomSelected inlineBlock">Single</div>
+        <div class="roomSelected inlineBlock">Double</div>
+        <div class="roomSelected inlineBlock">Suite</div>
+        <div class="roomSelected inlineBlock">Deluxe</div>
       </section>
       <section id="optionList">
 
       </section>
       <section id="personOption">
           <div id="adult" class="countBox">
-            <div class="label">성인</div>
-            <button class="countButton inlineBlock">-</button><input id="adultCount" type="text" value=0><button class="countButton inlineBlock">+</button>
+            <div>성인</div>
+            <button class="countButton inlineBlock">-</button>
+            <input id="adultCount" class="countInput" type="text" value=0>
+            <button class="countButton inlineBlock">+</button>
           </div>
           <div id="children" class="countBox">
-            <div class="label">아동</div>
-            <button class="countButton inlineBlock">-</button><input id="childCount" type="text" value=0><button class="countButton inlineBlock">+</button>
+            <div>아동</div>
+            <button class="countButton inlineBlock">-</button>
+            <input id="childCount" class="countInput" type="text" value=0>
+            <button class="countButton inlineBlock">+</button>
           </div>
       </section>
     </div>
