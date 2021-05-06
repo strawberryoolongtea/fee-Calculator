@@ -19,11 +19,11 @@
     <div id="section-container">
       <section id="checkIn" class="box">
         <div class="label">체크인</div>
-        <div class="date">2021.05.01</div>
+        <input id="checkInCal" type="date">
       </section>
       <section id="checkOut" class="box">
           <div class="label">체크아웃</div>
-          <div class="date">2021.05.04</div>
+          <input id="checkOutCal" type="date">
       </section>
       <section id="roomFee" class="box">
         <div class="label inlineBlock">객실 선택</div>
@@ -41,15 +41,11 @@
       <section id="personOption">
           <div id="adult" class="countBox">
             <div class="label">성인</div>
-            <div class="adultCount">
-              <span>-</span><span>0</span><span>+</span>
-            </div>
+            <button class="countButton inlineBlock">-</button><input id="adultCount" type="text" value=0><button class="countButton inlineBlock">+</button>
           </div>
           <div id="children" class="countBox">
             <div class="label">아동</div>
-            <div class="adultCount">
-              <span>-</span><span>0</span><span>+</span>
-            </div>
+            <button class="countButton inlineBlock">-</button><input id="childCount" type="text" value=0><button class="countButton inlineBlock">+</button>
           </div>
       </section>
     </div>
