@@ -29,7 +29,9 @@ for (let i=0;i<roomSizeArr.length;i++){
     roomSizeArr[i].addEventListener('click', function (){
         for (let i=0;i<roomSizeArr.length;i++){
             if (this === roomSizeArr[i]){
-                document.querySelector('#roomFeeBox').innerText = roomFeeArr[i];
+                document.querySelector('div#roomFeeBox').innerText = roomFeeArr[i];
+                document.querySelector('div#roomFeeBox').value = this.innerText;
+                this.style.backgroundColor = 'rgb(224, 193, 80)';
             }
         }
     })
@@ -63,3 +65,24 @@ for (let i=0;i<countButton.length;i++){
         }
     })
 }
+
+        //////////////
+        // 계산 버튼 //
+        //////////////
+
+document.querySelector('input#calculate').addEventListener('click',function(){
+    // 체크인
+    let checkInValue = document.querySelector('input#checkInCal')/value;
+    // 체크아웃
+    let checkOutValue = document.querySelector('input#checkOutCal').value;
+    // 객실
+    // 요금
+    let roomSizeValue = document.querySelector('div#roomFeeBox').value;
+    let roomFeeValue = document.querySelector('div#roomFeeBox').innerText;
+    // 인원
+    // 성인
+    let adultValue = document.querySelector('input#adultCount').value;
+    // 아동
+    let childValue = document.querySelector('input#childCount').value;
+
+})
