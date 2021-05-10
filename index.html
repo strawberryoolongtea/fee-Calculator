@@ -8,53 +8,106 @@
     <!-- style -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/receipt.css">
 
     <title>Paradise Hotel | 온라인 예약 시스템</title>
 </head>
 <body>
-  <div id="container">
-    <header id="header">
-        <h1 class="title">reservation</h1>
-    </header>
-    <div id="section-container">
-      <section id="checkIn" class="box">
-        <div class="label inlineBlock">체크인</div>
-        <input id="checkInCal" type="date">
-      </section>
-      <section id="checkOut" class="box">
-          <div class="label inlineBlock">체크아웃</div>
-          <input id="checkOutCal" type="date">
-      </section>
-      <section id="roomFee" class="box">
-        <div class="label inlineBlock">객실 선택</div>
-        <div id='roomFeeBox' class="inlineBlock"></div>
-      </section>
-      <section id="roomSize">
-        <div class="roomSelected inlineBlock">Single</div>
-        <div class="roomSelected inlineBlock">Double</div>
-        <div class="roomSelected inlineBlock">Suite</div>
-        <div class="roomSelected inlineBlock">Deluxe</div>
-      </section>
-      <section id="optionList">
 
-      </section>
-      <section id="personOption">
-          <div id="adult" class="countBox">
-            <div>성인</div>
-            <button class="countButton inlineBlock">-</button>
-            <input id="adultCount" class="countInput" type="text" value=0>
-            <button class="countButton inlineBlock">+</button>
-          </div>
-          <div id="children" class="countBox">
-            <div>아동</div>
-            <button class="countButton inlineBlock">-</button>
-            <input id="childCount" class="countInput" type="text" value=0>
-            <button class="countButton inlineBlock">+</button>
-          </div>
-      </section>
-    </div>
-    <input type="submit" value="요금 계산하기" id="calculate">
+      <!-- main -->
+
+  <div id="mainPage">
+    <!-- <div id="container"> -->
+      <header id="header">
+          <h1 class="title">reservation</h1>
+      </header>
+      <div id="section-container">
+        <section id="checkIn" class="box">
+          <div class="label inlineBlock">체크인</div>
+          <input id="checkInCal" type="date">
+        </section>
+        <section id="checkOut" class="box">
+            <div class="label inlineBlock">체크아웃</div>
+            <input id="checkOutCal" type="date">
+        </section>
+        <section id="roomFee" class="box">
+          <div class="label inlineBlock">객실 선택</div>
+          <div id='roomFeeBox' class="inlineBlock" value=''></div>
+        </section>
+        <section id="roomSize">
+          <div class="roomSelected inlineBlock">Single</div>
+          <div class="roomSelected inlineBlock">Double</div>
+          <div class="roomSelected inlineBlock">Suite</div>
+          <div class="roomSelected inlineBlock">Deluxe</div>
+        </section>
+        <section id="optionList">
+
+        </section>
+        <section id="personOption">
+            <div id="adult" class="countBox">
+              <div>성인</div>
+              <button class="countButton inlineBlock">-</button>
+              <input id="adultCount" class="countInput" type="text" value=0>
+              <button class="countButton inlineBlock">+</button>
+            </div>
+            <div id="children" class="countBox">
+              <div>아동</div>
+              <button class="countButton inlineBlock">-</button>
+              <input id="childCount" class="countInput" type="text" value=0>
+              <button class="countButton inlineBlock">+</button>
+            </div>
+        </section>
+      </div>
+      <input id="calculate" type="submit" value="요금 계산하기">
+    <!-- </div> -->
   </div>
+
+      <!-- receipt -->
+
+  <div id="receiptPage">
+    <!-- <div class="container"> -->
+      <button id='back'> < </button>
+      <header id="header">
+        <h1 class="title">receipt</h1>
+      </header>
+      <section id="section-container">
+        <section class="receipt-details">
+          <div class="label">체크인</div>
+          <div id="receipt-checkIn" class="content"></div>
+        </section>
+        <section class="receipt-details">
+          <div class="label">체크아웃</div>
+          <div id="nightsCount" class="content">
+            <span id="receipt-checkOut"></span>
+            <i class="material-icons-outlined hotel">hotel</i>
+            <span>3박</span>
+          </div>
+        </section>
+        <section class="receipt-details">
+          <div class="label">객실</div>
+          <div id="receipt-room" class="content"></div>
+        </section>
+        <section class="receipt-details">
+          <div class="label">인원</div>
+          <div id="personCount" class="content">
+            <div class="adult">
+              <span>성인</span><span id='receipt-adult'></span>
+            </div>
+            <div class="children">
+              <span>아동</span><span id="receipt-child"></span>
+            </div>
+          </div>
+        </section>
+        <section class="receipt-details">
+          <div class="label">요금</div>
+          <div id="calculatedPrice" class="content"></div>
+        </section>
+      </section>
+      <input type="submit" value="예약하기" id="reserve">
+    <!-- </div> -->
+  </div>
+
+
   <script type="text/javascript" src="./script/declaration.js"></script>
   <script type="text/javascript" src="./script/script.js"></script>
   <script>

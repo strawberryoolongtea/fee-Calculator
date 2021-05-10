@@ -48,7 +48,7 @@ body {
     transition: background-color .5s;
 }
 #checkIn:hover, #checkOut:hover, #roomOption:hover {
-    background-color: rgba(224,193,80,0.5);
+    background-color: rgba(224, 193, 80, 0.502);
 }
 
 .box {

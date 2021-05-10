@@ -27,9 +27,12 @@ let roomFeeArr = ['100,000', '200,000', '300,000', '400,000'];
 
 for (let i=0;i<roomSizeArr.length;i++){
     roomSizeArr[i].addEventListener('click', function (){
+        console.log(this)
         for (let i=0;i<roomSizeArr.length;i++){
             if (this === roomSizeArr[i]){
-                document.querySelector('#roomFeeBox').innerText = roomFeeArr[i];
+                document.querySelector('div#roomFeeBox').innerText = roomFeeArr[i];
+                document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
+                this.style.backgroundColor = 'rgb(224, 193, 80)';
             }
         }
     })
@@ -63,3 +66,49 @@ for (let i=0;i<countButton.length;i++){
         }
     })
 }
+
+        //////////////
+        // 계산 버튼 //
+        //////////////
+
+function clickCalculate(obj){
+    for(let i in obj){
+        if (obj[i][1] !== undefined){
+            obj[i][1].innerText = obj[i][0]
+        }
+    }
+}
+
+document.querySelector('input#calculate').addEventListener('click',function(){
+    document.querySelector('div#mainPage').style.display = 'none';
+    document.querySelector('div#receiptPage').style.display = 'block';
+    // 체크인
+    checkInValue = document.querySelector('input#checkInCal').value;
+    // 체크아웃
+    checkOutValue = document.querySelector('input#checkOutCal').value;
+    // 객실
+    roomSizeValue = document.querySelector('div#roomFeeBox').value;
+    // 요금
+    roomFeeValue = document.querySelector('div#roomFeeBox').innerText;
+    // 인원
+    // 성인
+    adultValue = document.querySelector('input#adultCount').value;
+    // 아동
+    childValue = document.querySelector('input#childCount').value;
+
+    let receiptObj = {
+        checkIn: [checkInValue, receiptCheckIn],
+        checkOut: [checkOutValue, receiptCheckOut],
+        roomSize: [roomSizeValue, receiptRoom],
+        roomFee: [roomFeeValue],
+        adult: [adultValue, receiptAdult],
+        child: [childValue, receiptChild]
+    }
+    clickCalculate(receiptObj);
+})
+
+//뒤로가기 버튼
+document.querySelector('button#back').addEventListener('click',function(){
+    document.querySelector('div#mainPage').style.display = 'block';
+    document.querySelector('div#receiptPage').style.display = 'none';
+})
