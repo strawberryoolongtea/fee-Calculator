@@ -27,6 +27,7 @@ let roomFeeArr = ['100,000', '200,000', '300,000', '400,000'];
 
 for (let i=0;i<roomSizeArr.length;i++){
     roomSizeArr[i].addEventListener('click', function (){
+        console.log(this)
         for (let i=0;i<roomSizeArr.length;i++){
             if (this === roomSizeArr[i]){
                 document.querySelector('div#roomFeeBox').innerText = roomFeeArr[i];
@@ -71,18 +72,35 @@ for (let i=0;i<countButton.length;i++){
         //////////////
 
 document.querySelector('input#calculate').addEventListener('click',function(){
+    document.querySelector('div#mainPage').style.display = 'none';
+    document.querySelector('div#receiptPage').style.display = 'block';
     // 체크인
-    let checkInValue = document.querySelector('input#checkInCal')/value;
+    checkInValue = document.querySelector('input#checkInCal').value;
     // 체크아웃
-    let checkOutValue = document.querySelector('input#checkOutCal').value;
+    checkOutValue = document.querySelector('input#checkOutCal').value;
     // 객실
+    roomSizeValue = document.querySelector('div#roomFeeBox').value;
     // 요금
-    let roomSizeValue = document.querySelector('div#roomFeeBox').value;
-    let roomFeeValue = document.querySelector('div#roomFeeBox').innerText;
+    roomFeeValue = document.querySelector('div#roomFeeBox').innerText;
     // 인원
     // 성인
-    let adultValue = document.querySelector('input#adultCount').value;
+    adultValue = document.querySelector('input#adultCount').value;
     // 아동
-    let childValue = document.querySelector('input#childCount').value;
+    childValue = document.querySelector('input#childCount').value;
 
+    let receiptObj = {
+        checkIn: [checkInValue, receiptCheckIn],
+        checkOut: [checkOutValue, receiptCheckOut],
+        roomSize: [roomSizeValue, receiptRoom],
+        roomFee: [roomFeeValue],
+        adult: [adultValue, receiptAdult],
+        child: [childValue, receiptChild]
+    }
+    clickCalculate(receiptObj);
+})
+
+//뒤로가기 버튼
+document.querySelector('button#back').addEventListener('click',function(){
+    document.querySelector('div#mainPage').style.display = 'block';
+    document.querySelector('div#receiptPage').style.display = 'none';
 })
