@@ -31,7 +31,7 @@ for (let i=0;i<roomSizeArr.length;i++){
         for (let i=0;i<roomSizeArr.length;i++){
             if (this === roomSizeArr[i]){
                 document.querySelector('div#roomFeeBox').innerText = roomFeeArr[i];
-                document.querySelector('div#roomFeeBox').value = this.innerText;
+                document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
                 this.style.backgroundColor = 'rgb(224, 193, 80)';
             }
         }
@@ -70,6 +70,14 @@ for (let i=0;i<countButton.length;i++){
         //////////////
         // 계산 버튼 //
         //////////////
+
+function clickCalculate(obj){
+    for(let i in obj){
+        if (obj[i][1] !== undefined){
+            obj[i][1].innerText = obj[i][0]
+        }
+    }
+}
 
 document.querySelector('input#calculate').addEventListener('click',function(){
     document.querySelector('div#mainPage').style.display = 'none';
