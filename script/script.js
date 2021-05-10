@@ -23,7 +23,7 @@ document.querySelector('input#checkOutCal').value = nextDate;
         /////////////////////////////////
 
 let roomSizeArr = [...document.querySelectorAll('.roomSelected')]
-let roomFeeArr = ['100,000', '200,000', '300,000', '400,000'];
+let roomFeeArr = [100000, 200000, 300000, 400000];
 
 for (let i=0;i<roomSizeArr.length;i++){
     roomSizeArr[i].addEventListener('click', function (){
@@ -77,6 +77,28 @@ function clickCalculate(obj){
             obj[i][1].innerText = obj[i][0]
         }
     }
+    
+    // 계산된금액
+    calculatedPrice = document.getElementById('calculatedPrice');
+    
+    if (childValue !== 0) {
+        switch (childValue) {
+            case '1' :
+                childFee = 10000;
+                break;
+            case '2' :
+                childFee = 20000;
+                break;
+            case '3' :
+                childFee = 30000;
+                break;
+            default :
+            childFee = 50000;
+        }
+                    
+        totalFee = parseInt(roomFeeValue, 10);
+    }
+    calculatedPrice.innerHTML = totalFee += childFee;
 }
 
 document.querySelector('input#calculate').addEventListener('click',function(){
