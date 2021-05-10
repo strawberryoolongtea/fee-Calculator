@@ -115,3 +115,12 @@ body {
   padding-left: 30px;
   background-color: rgba(224,193,80,0.5)
 }
+
+.booked {
+  font-family: var(--sub-font);
+  font-size: 1rem;
+  font-weight: bolder;
+
+  text-align: center;
+  color: var(--sub-color);
+}
