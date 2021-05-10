@@ -98,7 +98,7 @@ function clickCalculate(obj){
                     
         totalFee = parseInt(roomFeeValue, 10);
     }
-    calculatedPrice.innerHTML = totalFee += childFee;
+    calculatedPrice.innerHTML = (totalFee += childFee).toLocaleString();
 }
 
 document.querySelector('input#calculate').addEventListener('click',function(){
