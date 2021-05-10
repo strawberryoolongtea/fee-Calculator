@@ -30,7 +30,19 @@ for (let i=0;i<roomSizeArr.length;i++){
         console.log(this)
         for (let i=0;i<roomSizeArr.length;i++){
             if (this === roomSizeArr[i]){
-                document.querySelector('div#roomFeeBox').innerText = roomFeeArr[i];
+                console.log(roomFeeArr[i]+"")
+                // 가격 쉼표
+                document.querySelector('div#roomFeeBox').innerText = (roomFeeArr[i]+"").split('').reverse().map(function(c,i,arr){
+                    if(i === 0){
+                        return c;
+                    }else{
+                        if(i%3 === 0){
+                            return c+",";
+                        }else{
+                            return c;
+                        }
+                    }
+                }).reverse().join("");
                 document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
                 this.style.backgroundColor = 'rgb(224, 193, 80)';
             }
