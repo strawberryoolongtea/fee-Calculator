@@ -4,9 +4,22 @@
 
 ### Room details ✍️
 
-* Room quantities
-* Capacity of a room
-* Reservation date
+* Single Room
+  * only for one person
+  * 50,000 KRW per 1 night
+* Double Room
+  * only for two-person
+  * 100,000 KRW per 1 night
+* Suite Room
+  * For two-person and one extra bed
+  * 200,000 KRW per 1 night
+  * 20,000 KRW per 1 extra bed
+  * Free for under 12 old
+* Deluxe Room
+  * For two-person and two extra beds
+  * 300,000 KRW per 1 night
+  * 30,000 KRW per 1 extra bed
+  * Free for under 12 old
 
 ### Page details ✍️
 
