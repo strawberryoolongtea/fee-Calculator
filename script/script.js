@@ -27,27 +27,27 @@
         
         for (let i=0;i<roomSizeArr.length;i++){
             roomSizeArr[i].addEventListener('click', function (){
-                console.log(this)
-                for (let i=0;i<roomSizeArr.length;i++){
-                    if (this === roomSizeArr[i]){
-                        console.log(roomFeeArr[i]+"")
-                        // 가격 쉼표
-                        document.querySelector('div#roomFeeBox').innerText = (roomFeeArr[i]+"").split('').reverse().map(function(c,i,arr){
-                            if(i === 0){
-                                return c;
+                if (this === roomSizeArr[i]){
+                    // 가격 쉼표
+                    document.querySelector('div#roomFeeBox').innerText = (roomFeeArr[i]+"").split('').reverse().map(function(c,i,arr){
+                        if(i === 0){
+                            return c;
+                        }else{
+                            if(i%3 === 0){
+                                return c+",";
                             }else{
-                                if(i%3 === 0){
-                                    return c+",";
-                                }else{
-                                    return c;
-                                }
+                                return c;
                             }
-                        }).reverse().join("");
-                        document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
-                        this.style.backgroundColor = 'rgb(224, 193, 80)';
-
-                        selectedRoomFee = roomFeeArr[i]
+                        }
+                    }).reverse().join("");
+                    document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
+                    for (let j in roomSizeArr){
+                        if (roomSizeArr[j].style.backgroundColor === 'rgb(224, 193, 80)'){
+                            roomSizeArr[j].style.backgroundColor = '#ffffff';
+                            break;
+                        }
                     }
+                    this.style.backgroundColor = 'rgb(224, 193, 80)';
                 }
             })
         }
