@@ -1,77 +1,20 @@
-
 /////////////////////////////
 // 체크인 체크아웃 날짜 부분 //
 /////////////////////////////
 
 let currentDate = new Date().toISOString().substring(0, 10)
 let nextDate = currentDate.split('-').map(function(day,index){
-  if (index === 2){
-      day++;
-      if ((day+"").length === 2){
-          return day+"";
-      }else{
-          return '0'+ day+""
-      }
-  }else{
-      return day;
-  }
-}).join('-');
-document.querySelector('input#checkInCal').value = currentDate;
-document.querySelector('input#checkOutCal').value = nextDate;
-        
-/////////////////////////////////
-// 방 종류 별로 가격 나오는 부분 //
-/////////////////////////////////
-        
-let roomSizeArr = [...document.querySelectorAll('.roomSelected')]
-let roomFeeArr = [50000, 100000, 200000, 300000];
-
-for (let i=0;i<roomSizeArr.length;i++){
-  roomSizeArr[i].addEventListener('click', function (){
-      if (this === roomSizeArr[i]){
-        // 가격 쉼표
-        document.querySelector('div#roomFeeBox').innerText = (roomFeeArr[i]+"").split('').reverse().map(function(c,i,arr){
-            if(i === 0){
-                return c;
-            }else{
-                if(i%3 === 0){
-                    return c+",";
+                if (index === 2){
+                    day++;
+                    if ((day+"").length === 2){
+                        return day+"";
+                    }else{
+                        return '0'+ day+""
+                    }
                 }else{
-                    return c;
+                    return day;
                 }
-            }
-        }).reverse().join("");
-        document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
-        for (let j in roomSizeArr){
-          if (roomSizeArr[j].style.backgroundColor === 'rgb(224, 193, 80)'){
-              roomSizeArr[j].style.backgroundColor = '#ffffff';
-              break;
-          }
-        }
-        this.style.backgroundColor = 'rgb(224, 193, 80)';
-      }
-  })
-}
-        
-//////////////
-/// 인원 수 ///
-//////////////
-
-let countButton = [...document.querySelectorAll('button.countButton')];
-for (let i=0;i<countButton.length;i++){
-    countButton[i].addEventListener('click',function(){
-        if(this.parentNode === document.querySelector('div#adult')){
-            if (document.querySelector('input#adultCount').value <= 0) {
-                if(this.innerText === '+'){
-                    document.querySelector('input#adultCount').value++;
-                }
-            }else{
-                return '0'+ day+""
-            }
-        }else{
-            return day;
-        }
-    }).join('-');
+            }).join('-');
 document.querySelector('input#checkInCal').value = currentDate;
 document.querySelector('input#checkOutCal').value = nextDate;
 
