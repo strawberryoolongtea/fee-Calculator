@@ -13,7 +13,7 @@
 * Suite Room
   * For two-person and one extra bed
   * 200,000 KRW per 1 night
-  * 50,000 KRW per 1 extra bed
+  * 20,000 KRW per 1 extra bed
   * Free for under 12 old
 * Deluxe Room
   * For two-person and two extra beds
