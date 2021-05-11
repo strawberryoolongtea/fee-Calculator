@@ -23,7 +23,7 @@
                 /////////////////////////////////
         
         let roomSizeArr = [...document.querySelectorAll('.roomSelected')]
-        let roomFeeArr = [100000, 200000, 300000, 400000];
+        let roomFeeArr = [50000, 100000, 200000, 300000];
         
         for (let i=0;i<roomSizeArr.length;i++){
             roomSizeArr[i].addEventListener('click', function (){
@@ -45,6 +45,8 @@
                         }).reverse().join("");
                         document.querySelector('div#roomFeeBox').value = this.innerText + ' Room';
                         this.style.backgroundColor = 'rgb(224, 193, 80)';
+
+                        selectedRoomFee = roomFeeArr[i]
                     }
                 }
             })
@@ -95,6 +97,9 @@
             
             if (childValue !== 0) {
                 switch (childValue) {
+                    case '0' :
+                        childFee = 0;
+                        break;
                     case '1' :
                         childFee = 10000;
                         break;
@@ -107,15 +112,11 @@
                     default :
                     childFee = 50000;
                 }
-                            
-                totalFee = parseInt(roomFeeValue, 10);
             }
-            calculatedPrice.innerHTML = (totalFee += childFee).toLocaleString();
+            calculatedPrice.innerText = (selectedRoomFee += childFee).toLocaleString();
         }
         
         document.querySelector('input#calculate').addEventListener('click',function(){
-            document.querySelector('div#mainPage').style.display = 'none';
-            document.querySelector('div#receiptPage').style.display = 'block';
             // 체크인
             checkInValue = document.querySelector('input#checkInCal').value;
             // 체크아웃
@@ -129,7 +130,7 @@
             adultValue = document.querySelector('input#adultCount').value;
             // 아동
             childValue = document.querySelector('input#childCount').value;
-        
+            
             let receiptObj = {
                 checkIn: [checkInValue, receiptCheckIn],
                 checkOut: [checkOutValue, receiptCheckOut],
@@ -138,7 +139,15 @@
                 adult: [adultValue, receiptAdult],
                 child: [childValue, receiptChild]
             }
-            clickCalculate(receiptObj);
+            
+            if (document.querySelector('#adultCount').value == 0) {
+                alert('인원수를 입력하세요!')
+            } else {
+                document.querySelector('div#mainPage').style.display = 'none';
+                document.querySelector('div#receiptPage').style.display = 'block';
+                
+                clickCalculate(receiptObj);
+            }
         })
         
         //뒤로가기 버튼
