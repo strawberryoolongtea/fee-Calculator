@@ -48,6 +48,7 @@ for (let i=0;i<roomSizeArr.length;i++){
                 }
             }
             this.style.backgroundColor = 'rgb(224, 193, 80)';
+            selectedRoomFee = roomFeeArr[i];
         }
     })
 }
@@ -91,6 +92,17 @@ function clickCalculate(obj){
             obj[i][1].innerText = obj[i][0]
         }
     }  
+
+    let checkInDate = obj.checkIn[1].innerText.split('-');
+    let checkOutDate = obj.checkOut[1].innerText.split('-');
+  
+    let startDate = new Date(checkInDate[0], checkInDate[1] - 1, checkInDate[2]);
+    let endDate = new Date(checkOutDate[0], checkOutDate[1] - 1, checkOutDate[2]);
+    let calculateNights = endDate - startDate;
+    calculateNights = calculateNights / (24*60*60*1000);
+  
+    document.getElementById('calculateNights').innerHTML = `${calculateNights}박`;
+
     // 계산된금액
     calculatedPrice = document.getElementById('calculatedPrice');
     if (childValue !== 0) {
@@ -111,7 +123,7 @@ function clickCalculate(obj){
             childFee = 50000;
         }
     }
-    calculatedPrice.innerText = (selectedRoomFee += childFee).toLocaleString();
+    calculatedPrice.innerText = ((selectedRoomFee + childFee) * calculateNights).toLocaleString();
 }
 
 document.querySelector('input#calculate').addEventListener('click',function(){
