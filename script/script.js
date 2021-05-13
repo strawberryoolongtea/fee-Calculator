@@ -49,6 +49,8 @@ for (let i=0;i<roomSizeArr.length;i++){
             }
             this.style.backgroundColor = 'rgb(224, 193, 80)';
             selectedRoomFee = roomFeeArr[i];
+            document.querySelector('#roomDetail').innerText = roomSizeArr[i].innerText;
+            // document.querySelector('#roomDetail')
         }
     })
 }
@@ -105,24 +107,18 @@ function clickCalculate(obj){
 
     // 계산된금액
     calculatedPrice = document.getElementById('calculatedPrice');
-    if (childValue !== 0) {
-        switch (childValue) {
-            case '0' :
-                childFee = 0;
-                break;
-            case '1' :
-                childFee = 10000;
-                break;
-            case '2' :
-                childFee = 20000;
-                break;
-            case '3' :
-                childFee = 30000;
-                break;
-            default :
-            childFee = 50000;
-        }
+    if (childValue <= 2) {
+        childFee = 10000;
+        childFee *= childValue;
+    } else if (childValue <= 3) {
+        childFee = 30000;
+        childFee *= childValue;
+    } else if (childValue > 3) {
+        childFee = 50000;
+        childFee *= childValue;
     }
+    document.querySelector('#roomPrice').innerText = (selectedRoomFee * calculateNights).toLocaleString();
+    document.querySelector('#childPrice').innerText = (childFee * calculateNights).toLocaleString();
     calculatedPrice.innerText = ((selectedRoomFee + childFee) * calculateNights).toLocaleString();
 }
 
@@ -148,7 +144,7 @@ document.querySelector('input#calculate').addEventListener('click',function(){
         adult: [adultValue, receiptAdult],
         child: [childValue, receiptChild]
     }
-    if(!document.querySelector('div#roomFeeBox').innerText){
+    if(document.querySelector('div#roomFeeBox').innerText == 0){
         alert('방을 선택해주세요!');
     }else if (document.querySelector('#adultCount').value == 0) {
         alert('인원수를 입력하세요!');

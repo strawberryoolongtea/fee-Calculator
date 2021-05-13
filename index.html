@@ -33,7 +33,8 @@
       </section>
       <section id="roomFee" class="box">
         <label for="roomFeeBox">객실선택</label>
-        <div id='roomFeeBox' class="inlineBlock" value=''></div>
+        <div id="roomDetail"></div>
+        <div id='roomFeeBox' class="inlineBlock" value=''>0</div>
       </section>
       <section id="roomSize">
         <div class="roomSelected inlineBlock">Single</div>
@@ -87,15 +88,23 @@
         <div class="label">인원</div>
         <div id="personCount" class="content">
           <div class="adult">
-            <span>기본</span><span id='receipt-adult'></span>
+            <span>성인</span><span id='receipt-adult'></span>
           </div>
           <div class="children">
-            <span>추가</span><span id="receipt-child"></span>
+            <span>아동</span><span id="receipt-child"></span>
           </div>
         </div>
       </section>
       <section class="receipt-details">
-        <div class="label">요금</div>
+        <div class="label">객실 요금</div>
+        <div id="roomPrice" class="content">0</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">아동 요금</div>
+        <div id="childPrice" class="content">0</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">총 요금</div>
         <div id="calculatedPrice" class="content">0</div>
       </section>
     </section>
