@@ -184,6 +184,14 @@ body {
   .receipt-details:nth-child(4) {border-top: 1px dashed var(--main-color);}
   .receipt-details:nth-child(5) {
     border-top: 1px dashed var(--main-color);
+    text-align: right;
+  }
+  .receipt-details:nth-child(6) {
+    border-top: 1px dashed var(--main-color);
+    text-align: right;
+  }
+  .receipt-details:nth-child(7) {
+    border-top: 1px dashed var(--main-color);
     border-bottom: 1px solid var(--main-color);
     margin-bottom: 42px;
     text-align: right;
@@ -238,6 +246,18 @@ body {
     color: var(--main-color);
   }
   
+  #roomPrice::after {
+    content: 'KRW';
+    margin-left: 10px;
+    font-weight: 400;
+  }
+
+  #childPrice::after {
+    content: 'KRW';
+    margin-left: 10px;
+    font-weight: 400;
+  }
+
   #calculatedPrice::after {
     content: 'KRW';
     margin-left: 10px;
