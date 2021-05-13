@@ -159,7 +159,7 @@ document.querySelector('input#calculate').addEventListener('click',function(){
     //뒤로가기 버튼//
     ////////////////
     
-document.querySelector('button#back').addEventListener('click',function(){
+document.querySelector('button#backButton').addEventListener('click',function(){
     document.querySelector('div#mainPage').style.display = 'block';
     document.querySelector('div#receiptPage').style.display = 'none';
 })
