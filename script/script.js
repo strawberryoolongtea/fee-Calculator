@@ -49,7 +49,7 @@ for (let i=0;i<roomSizeArr.length;i++){
             }
             this.style.backgroundColor = 'rgb(224, 193, 80)';
             selectedRoomFee = roomFeeArr[i];
-            document.querySelector('#roomDetail').innerText = roomSizeArr[i].dataset.detail;
+            document.querySelector('#roomDetail').innerText = roomSizeArr[i].innerText;
             // document.querySelector('#roomDetail')
         }
     })
@@ -150,7 +150,7 @@ document.querySelector('input#calculate').addEventListener('click',function(){
         adult: [adultValue, receiptAdult],
         child: [childValue, receiptChild]
     }
-    if(!document.querySelector('div#roomFeeBox').innerText){
+    if(document.querySelector('div#roomFeeBox').innerText == 0){
         alert('방을 선택해주세요!');
     }else if (document.querySelector('#adultCount').value == 0) {
         alert('인원수를 입력하세요!');
