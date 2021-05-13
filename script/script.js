@@ -118,7 +118,7 @@ function clickCalculate(obj){
         childFee *= childValue;
     }
     document.querySelector('#roomPrice').innerText = (selectedRoomFee * calculateNights).toLocaleString();
-    document.querySelector('#childPrice').innerText = childFee.toLocaleString();
+    document.querySelector('#childPrice').innerText = (childFee * calculateNights).toLocaleString();
     calculatedPrice.innerText = ((selectedRoomFee + childFee) * calculateNights).toLocaleString();
 }
 
