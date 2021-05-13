@@ -16,9 +16,12 @@
 * Free for under 4 old
 
 * if total number of the child is...
-  * 1~2    : 10,000 KRW per child
-  * 3      : 30,000 KRW per child
-  * over 3 : 50,000 KRW per child
+  * 1~2
+    * 10,000 KRW per child
+  * 3
+    * 30,000 KRW per child
+  * over 3
+    * 50,000 KRW per child
 
 ### Page details ✍️
 
