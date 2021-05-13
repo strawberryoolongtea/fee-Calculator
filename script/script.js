@@ -107,23 +107,15 @@ function clickCalculate(obj){
 
     // 계산된금액
     calculatedPrice = document.getElementById('calculatedPrice');
-    if (childValue !== 0) {
-        switch (childValue) {
-            case '0' :
-                childFee = 0;
-                break;
-            case '1' :
-                childFee = 10000;
-                break;
-            case '2' :
-                childFee = 20000;
-                break;
-            case '3' :
-                childFee = 30000;
-                break;
-            default :
-            childFee = 50000;
-        }
+    if (childValue <= 2) {
+        childFee = 10000;
+        childFee *= childValue;
+    } else if (childValue <= 3) {
+        childFee = 30000;
+        childFee *= childValue;
+    } else if (childValue > 3) {
+        childFee = 50000;
+        childFee *= childValue;
     }
     calculatedPrice.innerText = ((selectedRoomFee + childFee) * calculateNights).toLocaleString();
 }
