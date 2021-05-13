@@ -38,11 +38,23 @@ body {
 #checkIn > label,
 #checkOut > label,
 #roomFee > label {
-    font-family: var(--sub-font);
-    font-weight: 700;
-    color: var(--sub-color);
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
+}
+.calendar{
+  font-size: 14px;
+  border: none;
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
 }
 
+.roomTagSize{
+  width: 26%;
+  color: var(--sub-color);
+  font-weight: bold;
+}
 #roomDetail {
   font-family: var(--main-font);
   /* font-size: .8rem; */
@@ -53,17 +65,20 @@ body {
 }
 
 #roomFeeBox{
-    color: var(--sub-color);
-    font-weight: bold;
+  color: var(--sub-color);
+  font-weight: bold;
+}
+#roomFeeBox-Before{
+  width: 20%;
+
 }
 
-#roomFeeBox::before {
+/* #roomFeeBox::before {
   display: inline-block;
   content: '1박당';
   margin-right: 10px;
-  
   font-family: var(--sub-font);
-}
+} */
 
 #roomFeeBox::after {
   content: 'KRW';
@@ -170,123 +185,137 @@ body {
 
 #receiptPage{
     display: none;
-  }
-  
-  .receipt-details {
-    display: flex;
-    width: 420px;
-    height: 60px;
-  }
-  
-  .receipt-details:nth-child(1) {border-top: 1px solid var(--main-color);}
-  .receipt-details:nth-child(2) {border-top: 1px dashed var(--main-color);}
-  .receipt-details:nth-child(3) {border-top: 1px dashed var(--main-color);}
-  .receipt-details:nth-child(4) {border-top: 1px dashed var(--main-color);}
-  .receipt-details:nth-child(5) {
-    border-top: 1px dashed var(--main-color);
-    text-align: right;
-  }
-  .receipt-details:nth-child(6) {
-    border-top: 1px dashed var(--main-color);
-    text-align: right;
-  }
-  .receipt-details:nth-child(7) {
-    border-top: 1px dashed var(--main-color);
-    border-bottom: 1px solid var(--main-color);
-    margin-bottom: 42px;
-    text-align: right;
-  }
-  
-  .label {
-    width: 100px;
-    padding-left: 30px;
-  
-    font-family: var(--sub-font);
-    font-weight: 700;
-  
-    color: var(--main-color);
-    text-align: left;
-    line-height: 60px;
-  }
-  
-  .content {
-    width: 290px;
-    padding-right: 30px;
-  
-    font-weight: 700;
-    color: var(--sub-color);
-    line-height: 60px;
-  }
-  
-  #nightsCount {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #nightsCount > span:last-child {
-    font-family: var(--sub-font);
-  }
-  
-  .material-icons-outlined.hotel {
-    margin-left: 80px;
-    font-size: 30px;
-    line-height: 60px;
-  }
-  
-  #personCount {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .adult {margin-right: 60px;}
-  
-  .adult > span:first-child, .children > span:first-child {
-    margin-right: 30px;
-    font-family: var(--sub-font);
-    color: var(--main-color);
-  }
-  
-  #roomPrice::after {
-    content: 'KRW';
-    margin-left: 10px;
-    font-weight: 400;
-  }
+}
+#backButton{
+  width: 110px;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: white;
+  color: #5b1a1a;
+  border: 1px solid #5b1a1a;
+  border-radius: 6px;
+  transition: background-color .8s;
+  transition: padding-right .5s;
+}
+#backButton:hover{
+  background-color: var(--main-color);
+  padding-right: 20px;
+}
+.receipt-details {
+  display: flex;
+  width: 420px;
+  height: 60px;
+}
 
-  #childPrice::after {
-    content: 'KRW';
-    margin-left: 10px;
-    font-weight: 400;
-  }
+.receipt-details:nth-child(1) {border-top: 1px solid var(--main-color);}
+.receipt-details:nth-child(2) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(3) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(4) {border-top: 1px dashed var(--main-color);}
+.receipt-details:nth-child(5) {
+  border-top: 1px dashed var(--main-color);
+  text-align: right;
+}
+.receipt-details:nth-child(6) {
+  border-top: 1px dashed var(--main-color);
+  text-align: right;
+}
+.receipt-details:nth-child(7) {
+  border-top: 1px dashed var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+  margin-bottom: 42px;
+  text-align: right;
+}
 
-  #calculatedPrice::after {
-    content: 'KRW';
-    margin-left: 10px;
-    font-weight: 400;
-  }
-  
-  #reserve {
-    position: relative;
-    width: 420px;
-    height: 60px;
-    border: 1px solid #E0C150;
-    border-radius: 5px;
-    background-color: var(--main-color);
-    font-family: var(--sub-font);
-    font-weight: 700;
-    color: var(--sub-color);
-    transition: background-color .5s, padding-left .5s;
-  }
-  
-  #reserve:hover {
-    padding-left: 30px;
-    background-color: rgba(224,193,80,0.5)
-  }
-  
-  .booked {
-    font-family: var(--sub-font);
-    font-size: 1rem;
-    font-weight: bolder;
-  
-    text-align: center;
-    color: var(--sub-color);
-  }
+.label {
+  width: 100px;
+  padding-left: 30px;
+
+  font-family: var(--sub-font);
+  font-weight: 700;
+
+  color: var(--main-color);
+  text-align: left;
+  line-height: 60px;
+}
+
+.content {
+  width: 290px;
+  padding-right: 30px;
+
+  font-weight: 700;
+  color: var(--sub-color);
+  line-height: 60px;
+}
+
+#nightsCount {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nightsCount > span:last-child {
+  font-family: var(--sub-font);
+}
+
+.material-icons-outlined.hotel {
+  margin-left: 80px;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+#personCount {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.adult {margin-right: 60px;}
+
+.adult > span:first-child, .children > span:first-child {
+  margin-right: 30px;
+  font-family: var(--sub-font);
+  color: var(--main-color);
+}
+
+#roomPrice::after {
+  content: 'KRW';
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+#childPrice::after {
+  content: 'KRW';
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+#calculatedPrice::after {
+  content: 'KRW';
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+#reserve {
+  position: relative;
+  width: 420px;
+  height: 60px;
+  border: 1px solid #E0C150;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
+  transition: background-color .5s, padding-left .5s;
+}
+
+#reserve:hover {
+  padding-left: 30px;
+  background-color: rgba(224,193,80,0.5)
+}
+
+.booked {
+  font-family: var(--sub-font);
+  font-size: 1rem;
+  font-weight: bolder;
+
+  text-align: center;
+  color: var(--sub-color);
+}

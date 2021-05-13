@@ -148,7 +148,7 @@ document.querySelector('input#calculate').addEventListener('click',function(){
         alert('방을 선택해주세요!');
     }else if (document.querySelector('#adultCount').value == 0) {
         alert('인원수를 입력하세요!');
-    }else {
+    }else{
         document.querySelector('div#mainPage').style.display = 'none';
         document.querySelector('div#receiptPage').style.display = 'block';
         clickCalculate(receiptObj);
@@ -159,7 +159,7 @@ document.querySelector('input#calculate').addEventListener('click',function(){
     //뒤로가기 버튼//
     ////////////////
     
-document.querySelector('button#back').addEventListener('click',function(){
+document.querySelector('button#backButton').addEventListener('click',function(){
     document.querySelector('div#mainPage').style.display = 'block';
     document.querySelector('div#receiptPage').style.display = 'none';
 })

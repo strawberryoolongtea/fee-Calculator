@@ -25,16 +25,17 @@
     <div id="section-container">
       <section id="checkIn" class="box">
         <label for="checkIncal">체크인</label>
-        <input id="checkInCal" type="date">
+        <input id="checkInCal" class="calendar" type="date">
       </section>
       <section id="checkOut" class="box">
           <label for="checkOutCal">체크아웃</label>
-          <input id="checkOutCal" type="date">
+          <input id="checkOutCal" class="calendar" type="date">
       </section>
       <section id="roomFee" class="box">
-        <label for="roomFeeBox">객실선택</label>
-        <div id="roomDetail"></div>
-        <div id='roomFeeBox' class="inlineBlock" value=''>0</div>
+        <label for="roomFeeBox" class="roomTagSize">객실선택</label>
+        <div id="roomDetail" class="roomTagSize"></div>
+        <div id='roomFeeBox-Before'class="roomTagSize inlineBlock">1박 당</div>
+        <div id='roomFeeBox' class="roomTagSize inlineBlock" value=''>0</div>
       </section>
       <section id="roomSize">
         <div class="roomSelected inlineBlock">Single</div>
@@ -63,7 +64,7 @@
   <!-- receipt -->
 
   <div id="receiptPage">
-    <button id="back">뒤로가기</button>
+    <button id="backButton"> < 뒤로가기 </button>
     <header id="header">
       <h1 class="title">receipt</h1>
     </header>
