@@ -43,6 +43,9 @@ body {
     color: var(--sub-color);
 }
 
+.roomTagSize{
+  width: 29%;
+}
 #roomDetail {
   font-family: var(--main-font);
   /* font-size: .8rem; */
@@ -57,13 +60,12 @@ body {
     font-weight: bold;
 }
 
-#roomFeeBox::before {
+/* #roomFeeBox::before {
   display: inline-block;
   content: '1박당';
   margin-right: 10px;
-  
   font-family: var(--sub-font);
-}
+} */
 
 #roomFeeBox::after {
   content: 'KRW';
