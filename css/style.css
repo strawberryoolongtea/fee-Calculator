@@ -38,13 +38,22 @@ body {
 #checkIn > label,
 #checkOut > label,
 #roomFee > label {
-    font-family: var(--sub-font);
-    font-weight: 700;
-    color: var(--sub-color);
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
+}
+.calendar{
+  font-size: 14px;
+  border: none;
+  font-family: var(--sub-font);
+  font-weight: 700;
+  color: var(--sub-color);
 }
 
 .roomTagSize{
   width: 26%;
+  color: var(--sub-color);
+  font-weight: bold;
 }
 #roomDetail {
   font-family: var(--main-font);
@@ -56,8 +65,12 @@ body {
 }
 
 #roomFeeBox{
-    color: var(--sub-color);
-    font-weight: bold;
+  color: var(--sub-color);
+  font-weight: bold;
+}
+#roomFeeBox-Before{
+  width: 20%;
+
 }
 
 /* #roomFeeBox::before {
