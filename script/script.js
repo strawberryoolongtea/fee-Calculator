@@ -49,6 +49,8 @@ for (let i=0;i<roomSizeArr.length;i++){
             }
             this.style.backgroundColor = 'rgb(224, 193, 80)';
             selectedRoomFee = roomFeeArr[i];
+            document.querySelector('#roomDetail').innerText = roomSizeArr[i].dataset.detail;
+            // document.querySelector('#roomDetail')
         }
     })
 }

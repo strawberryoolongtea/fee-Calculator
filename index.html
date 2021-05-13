@@ -33,23 +33,24 @@
       </section>
       <section id="roomFee" class="box">
         <label for="roomFeeBox">객실선택</label>
-        <div id='roomFeeBox' class="inlineBlock" value=''></div>
+        <div id="roomDetail"></div>
+        <div id='roomFeeBox' class="inlineBlock" value=''>0</div>
       </section>
       <section id="roomSize">
-        <div class="roomSelected inlineBlock">Single</div>
-        <div class="roomSelected inlineBlock">Double</div>
-        <div class="roomSelected inlineBlock">Suite</div>
-        <div class="roomSelected inlineBlock">Deluxe</div>
+        <div class="roomSelected inlineBlock" data-detail="Single">Single</div>
+        <div class="roomSelected inlineBlock" data-detail="Double">Double</div>
+        <div class="roomSelected inlineBlock" data-detail="Suite">Suite</div>
+        <div class="roomSelected inlineBlock" data-detail="Deluxe">Deluxe</div>
       </section>
       <section id="personOption">
           <div id="adult" class="countBox">
-            <div>성인</div>
+            <div>기본 인원</div>
             <button class="countButton inlineBlock">-</button>
             <input id="adultCount" class="countInput" type="text" value=0>
             <button class="countButton inlineBlock">+</button>
           </div>
           <div id="children" class="countBox">
-            <div>아동</div>
+            <div>추가 인원</div>
             <button class="countButton inlineBlock">-</button>
             <input id="childCount" class="countInput" type="text" value=0>
             <button class="countButton inlineBlock">+</button>

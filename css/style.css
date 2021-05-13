@@ -43,10 +43,36 @@ body {
     color: var(--sub-color);
 }
 
+#roomDetail {
+  font-family: var(--main-font);
+  /* font-size: .8rem; */
+  font-weight: 700;
+
+  line-height: 18px;
+  color: var(--sub-color)
+}
+
 #roomFeeBox{
     color: var(--sub-color);
     font-weight: bold;
 }
+
+#roomFeeBox::before {
+  display: inline-block;
+  content: '1박당';
+  margin-right: 10px;
+  
+  font-family: var(--sub-font);
+}
+
+#roomFeeBox::after {
+  content: 'KRW';
+  margin-left: 5px;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--sub-color)
+}
+
 .roomSelected{
     margin: 10px 0 10px;
     padding: 13px;
@@ -57,6 +83,7 @@ body {
     color: var(--sub-color);
     font-weight: bold;
     transition: background-color .8s;
+    cursor: pointer;
 }
 .roomSelected:hover{
     background-color: var(--main-color);
@@ -100,12 +127,14 @@ body {
     padding: 30px;
     width: 32%;
     height: 100%;
+    font-family: var(--sub-font);
     text-align: center;
     border: 1px solid var(--main-color);
     border-radius: 5px;
     color: var(--sub-color);
 }
 .countButton{
+    margin-top: 20px;
     font-size: 20px;
     width: 25px;
     border: none;
