@@ -1,14 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- style -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- google Material Icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+
+  <title>Paradise Hotel | 온라인 예약 시스템</title>
 </head>
 <body>
 
-    <script type="text/javascript" src="./script/script.js"></script>
+  <!-- main -->
+
+  <div id="mainPage">
+    <header id="header">
+        <h1 class="title">reservation</h1>
+    </header>
+    <div id="section-container">
+      <section id="checkIn" class="box">
+        <label for="checkIncal">체크인</label>
+        <input id="checkInCal" class="calendar" type="date">
+      </section>
+      <section id="checkOut" class="box">
+          <label for="checkOutCal">체크아웃</label>
+          <input id="checkOutCal" class="calendar" type="date">
+      </section>
+      <section id="roomFee" class="box">
+        <label for="roomFeeBox" class="roomTagSize">객실선택</label>
+        <div id="roomDetail" class="roomTagSize"></div>
+        <div id='roomFeeBox-Before'class="roomTagSize inlineBlock">1박 당</div>
+        <div id='roomFeeBox' class="roomTagSize inlineBlock" value=''>0</div>
+      </section>
+      <section id="roomSize">
+        <div class="roomSelected inlineBlock">Single</div>
+        <div class="roomSelected inlineBlock">Double</div>
+        <div class="roomSelected inlineBlock">Suite</div>
+        <div class="roomSelected inlineBlock">Deluxe</div>
+      </section>
+      <section id="personOption">
+          <div id="adult" class="countBox">
+            <div>성인</div>
+            <button class="countButton inlineBlock">-</button>
+            <input id="adultCount" class="countInput" type="text" value=0>
+            <button class="countButton inlineBlock">+</button>
+          </div>
+          <div id="children" class="countBox">
+            <div>아동</div>
+            <button class="countButton inlineBlock">-</button>
+            <input id="childCount" class="countInput" type="text" value=0>
+            <button class="countButton inlineBlock">+</button>
+          </div>
+      </section>
+    </div>
+    <input id="calculate" type="submit" value="요금 계산하기">
+  </div>
+
+  <!-- receipt -->
+
+  <div id="receiptPage">
+    <button id="backButton"> < 뒤로가기 </button>
+    <header id="header">
+      <h1 class="title">receipt</h1>
+    </header>
+    <section id="section-container">
+      <section class="receipt-details">
+        <div class="label">체크인</div>
+        <div id="receipt-checkIn" class="content"></div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">체크아웃</div>
+        <div id="nightsCount" class="content">
+          <span id="receipt-checkOut"></span>
+          <i class="material-icons-outlined hotel">hotel</i>
+          <span id="calculateNights"></span>
+        </div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">객실</div>
+        <div id="receipt-room" class="content"></div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">인원</div>
+        <div id="personCount" class="content">
+          <div class="adult">
+            <span>성인</span><span id='receipt-adult'></span>
+          </div>
+          <div class="children">
+            <span>아동</span><span id="receipt-child"></span>
+          </div>
+        </div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">객실 요금</div>
+        <div id="roomPrice" class="content">0</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">아동 요금</div>
+        <div id="childPrice" class="content">0</div>
+      </section>
+      <section class="receipt-details">
+        <div class="label">총 요금</div>
+        <div id="calculatedPrice" class="content">0</div>
+      </section>
+    </section>
+    <div class="booked">예약이 완료되었습니다!</div>
+  </div>
+
+
+  <script type="text/javascript" src="./script/declaration.js"></script>
+  <script type="text/javascript" src="./script/script.js"></script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'gpr1zpi',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </body>
 </html>
