@@ -1,3 +1,4 @@
+# 🚀 [View site](https://cranky-noyce-d09070.netlify.app/)
 # Fee Calculator
 
 ## 🛎️ Room reservation system 🛎️
